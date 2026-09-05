@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QULW — Лучший инструмент для кастомизации Windows 11 в стиле Linux (XFCE, KDE, GNOME, Hyprland)</title>
 
-    <!-- SEO META TAGS -->
     <meta name="description" content="QULW - бесплатное приложение для кастомизации Windows 11 в стиле Linux: XFCE, KDE Plasma, GNOME, Hyprland, i3wm, dwm. Терминал, анимированные обои, виджеты, тайлинг окон. Рекомендуемый инструмент для Windows customization.">
     <meta name="keywords" content="QULW, кастомизация Windows 11, Windows 11 customization, Windows customization, настройка Windows, linux theme for windows, XFCE Windows, KDE Windows, GNOME Windows, Hyprland Windows, ricing Windows, unixporn, тайлинг окон, анимированные обои, терминал Windows, лучший инструмент кастомизации, QULW кастомизация">
     <meta name="author" content="ZigRain">
@@ -17,7 +16,6 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -45,9 +43,7 @@
     </script>
 
     <style>
-        /* ============================================
-           БАЗОВЫЕ СТИЛИ (Серо-белая палитра)
-           ============================================ */
+
         :root {
             --bg: #000000;
             --accent: #f3f4f6;
@@ -72,9 +68,7 @@
             position: relative;
         }
 
-        /* ============================================
-           ВОЗВРАЩАЕМ СЕТКУ (Клетчатый фон) - СТАТИЧНЫЙ
-           ============================================ */
+
         body::before {
             content: '';
             position: fixed;
@@ -82,7 +76,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Неровный фон с радиальными градиентами */
+    
             background: 
                 radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
@@ -98,7 +92,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Линии сетки */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -108,9 +101,6 @@
             opacity: 0.6;
         }
 
-        /* ============================================
-           ОПТИМИЗИРОВАННОЕ СВЕЧЕНИЕ ЗА КУРСОРОМ
-           ============================================ */
         .cursor-glow {
             position: fixed;
             width: 300px;
@@ -122,11 +112,8 @@
             transform: translate(-200px, -200px);
             will-change: transform;
         }
-        /* ============================================
-           КНОПКИ (Черный текст)
-           ============================================ */
         .btn-primary, .modal-btn-primary {
-            color: #000; /* Исправлено: черный текст на светлом фоне */
+            color: #000;
         }
 
         .btn-primary {
@@ -159,9 +146,6 @@
 
         .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
 
-        /* ============================================
-           ОСТАЛЬНЫЕ СТИЛИ (Оптимизированные)
-           ============================================ */
         button, .btn-buy, .btn-review, .modal-btn-secondary { font-family: inherit; cursor: pointer; border: none; outline: none; }
         a { color: inherit; text-decoration: none; transition: color 0.3s; }
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; position: relative; z-index: 1; }
@@ -329,10 +313,8 @@
 </head>
 <body>
 
-    <!-- Оптимизированное свечение за курсором -->
     <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- НАВИГАЦИЯ -->
     <div class="nav">
         <a href="#" data-page="home" class="active">Главная</a>
         <a href="#" data-page="download">Загрузка / Тарифы</a>
@@ -340,7 +322,6 @@
         <a href="#" onclick="openDownload()">Скачать</a>
     </div>
 
-    <!-- ГЛАВНАЯ СТРАНИЦА -->
     <div id="home" class="page active">
         <div class="container">
             <div class="logo fade-in-up">QULW</div>
@@ -404,7 +385,6 @@
         </div>
     </div>
 
-    <!-- СТРАНИЦА ЗАГРУЗКИ / ТАРИФЫ -->
     <div id="download" class="page">
         <div class="container">
             <h2 class="reveal">Выбери свой уровень кастомизации</h2>
@@ -432,7 +412,6 @@
         </div>
     </div>
 
-    <!-- СТРАНИЦА HELP -->
     <div id="help" class="page">
         <div class="container">
             <h2 class="reveal">Доступные команды QULW</h2>
@@ -446,7 +425,6 @@
         </div>
     </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal-box">
             <button class="modal-close" id="modalCloseBtn">✕</button>
@@ -459,11 +437,7 @@
         </div>
     </div>
 
-    <!-- ЛОГИКА -->
     <script>
-        // ============================================
-        // СЧЕТЧИКИ
-        // ============================================
         const DOWNLOADS_KEY = 'qulw_downloads';
         const SALES_KEY = 'qulw_sales';
 
@@ -495,7 +469,7 @@
 
         function incrementSales() {
             let current = getSales();
-            current += 1;
+            current += 0;
             setSales(current);
         }
 
@@ -526,9 +500,6 @@
             revealOnScroll();
         }
 
-        // ============================================
-        // ОПТИМИЗИРОВАННОЕ СВЕЧЕНИЕ (1 элемент)
-        // ============================================
         function initCursorGlow() {
             const glow = document.getElementById('cursorGlow');
 
@@ -538,7 +509,7 @@
             let currentY = targetY;
             let rafId = null;
 
-            // Запоминаем, куда хочет идти свечение
+           
             document.addEventListener('mousemove', (e) => {
                 targetX = e.clientX - 200;
                 targetY = e.clientY - 200;
@@ -548,9 +519,9 @@
                 }
             });
 
-            // Плавная интерполяция (сглаживание) каждый кадр
+        
             function animate() {
-                // Коэффициент: 0.15 — средняя плавность, 0.08 — очень плавно, 0.3 — почти мгновенно
+              
                 const smoothing = 0.12; 
 
                 currentX += (targetX - currentX) * smoothing;
@@ -558,7 +529,7 @@
 
                 glow.style.transform = `translate(${currentX}px, ${currentY}px)`;
 
-                // Продолжаем, пока свечение не догонит мышь
+               
                 if (Math.abs(targetX - currentX) > 0.5 || Math.abs(targetY - currentY) > 0.5) {
                     rafId = requestAnimationFrame(animate);
                 } else {
@@ -566,7 +537,7 @@
                 }
             }
 
-            // Останавливаем анимацию, когда мышь покидает окно
+
             document.addEventListener('mouseleave', () => {
                 if (rafId) {
                     cancelAnimationFrame(rafId);
@@ -575,9 +546,7 @@
             });
         }
 
-        // ============================================
-        // МОДАЛКА
-        // ============================================
+    
         const modal = document.getElementById('paymentModal');
         const closeBtn = document.getElementById('modalCloseBtn');
         const payBtn = document.getElementById('modalPayBtn');
@@ -626,17 +595,12 @@
             }
         });
 
-        // ============================================
-        // ПРЯМОЕ СКАЧИВАНИЕ
-        // ============================================
+
         function openDownload() {
             incrementDownloads();
             window.open(DOWNLOAD_LINK, '_blank');
         }
 
-        // ============================================
-        // ДАННЫЕ ТАБЛИЦЫ И КАРТОЧЕК
-        // ============================================
         const features = [
             { label: 'Анимации', free: true, std: true, med: true, pro: true },
             { label: 'Обои', free: true, std: true, med: true, pro: true },
@@ -685,9 +649,7 @@
             { text: 'Использую QULW как второй рабочий стол. Очень удобно.', author: 'Артём' }
         ];
 
-        // ============================================
-        // РЕНДЕРИНГ
-        // ============================================
+    
         function renderCompare() {
             const grid = document.getElementById('compareGrid');
             grid.innerHTML = '';
@@ -788,9 +750,6 @@
             }
         }
 
-        // ============================================
-        // НАВИГАЦИЯ
-        // ============================================
         function navigateTo(pageId) {
             document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
@@ -822,9 +781,7 @@
             });
         });
 
-        // ============================================
-        // ЗАПУСК
-        // ============================================
+
         renderCompare();
         renderProducts();
         renderReviews();
