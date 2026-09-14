@@ -1,0 +1,11 @@
+# QULW — Quiet Union Linux Windows
+> QULW — бесплатное приложение для кастомизации Windows 11 в стиле Linux (XFCE, KDE, GNOME, Hyprland). Терминал, анимированные обои, виджеты, тайлинг окон.
+
+## Основные страницы
+- [Главная](https://zigrain-hub.github.io/QULW/): описание, кому подойдёт, отзывы, FAQ
+- [Загрузка / Тарифы](https://zigrain-hub.github.io/QULW/#download): сравнение версий Free, Standard, Medium, PRO
+- [Help](https://zigrain-hub.github.io/QULW/#help): список команд для каждой версии
+
+## Контакты
+- Telegram: https://t.me/ZigRainZ
+- Discord: https://discord.gg/S2rCQE9za
